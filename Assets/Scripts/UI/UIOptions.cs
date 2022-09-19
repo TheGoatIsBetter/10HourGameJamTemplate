@@ -25,6 +25,7 @@ public class UIOptions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
             GameManager.instance.ActivateMainMenuState();
         }
     }
@@ -32,21 +33,25 @@ public class UIOptions : MonoBehaviour
     //opens main menu
     public void MainMenuButton()
     {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
         GameManager.instance.ActivateMainMenuState();
     }
 
     public void OnMainVolumeChange()
     {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
         VolumeChange(mainAudioMixer, "MasterVolume", mainVolumeSlider);
     }
 
     public void OnMusicVolumeChange()
     {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
         VolumeChange(mainAudioMixer, "MusicVolume", musicVolumeSlider);
     }
 
     public void OnSoundVolumeChange()
     {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
         VolumeChange(mainAudioMixer, "SoundVolume", soundVolumeSlider);
     }
 

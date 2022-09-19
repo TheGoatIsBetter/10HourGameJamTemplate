@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverStateObject;
     public GameObject mainMenuStateObject;
     public GameObject optionsStateObject;
+    public GameObject gameplayStateObject;
 
 
     //Awake is called before Start
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         gameOverStateObject.SetActive(false);
         mainMenuStateObject.SetActive(false);
         optionsStateObject.SetActive(false);
+        gameplayStateObject.SetActive(false);
     }
 
     public void ActivateTitleScreenState()
@@ -76,5 +78,11 @@ public class GameManager : MonoBehaviour
     {
         DeactivateAllStates();
         optionsStateObject.SetActive(true);
+    }
+
+    public void ActivateGameplayState()
+    {
+        DeactivateAllStates();
+        gameplayStateObject.SetActive(true);
     }
 }

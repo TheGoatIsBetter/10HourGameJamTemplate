@@ -9,6 +9,7 @@ public class UITitleScreen : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
+            AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
             GameManager.instance.ActivateMainMenuState();
         }
     }
