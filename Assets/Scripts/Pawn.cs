@@ -16,7 +16,7 @@ public class Pawn : MonoBehaviour
     public float turnSpeed;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         //load mover
         mover = GetComponent<Mover>();
