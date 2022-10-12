@@ -18,6 +18,20 @@ public class UIMainMenu : MonoBehaviour
         GameManager.instance.ActivateOptionsState();
     }
 
+    //opens controls menu
+    public void ControlsButton()
+    {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
+        GameManager.instance.ActivateControlsState();
+    }
+
+    //opens credits menu
+    public void CreditsButton()
+    {
+        AudioManager.instance.audioSource.PlayOneShot(AudioManager.instance.menuButton);
+        GameManager.instance.ActivateCreditsState();
+    }
+
     //quits the game
     public void QuitGameButton()
     {

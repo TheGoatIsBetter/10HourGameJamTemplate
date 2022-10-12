@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Screen State Objects")]
-    public GameObject titleScreenStateObject;
-    public GameObject gameOverStateObject;
-    public GameObject mainMenuStateObject;
-    public GameObject optionsStateObject;
-    public GameObject gameplayStateObject;
+    [SerializeField] private GameObject titleScreenStateObject;
+    [SerializeField] private GameObject gameOverStateObject;
+    [SerializeField] private GameObject mainMenuStateObject;
+    [SerializeField] private GameObject optionsStateObject;
+    [SerializeField] private GameObject controlsStateObject;
+    [SerializeField] private GameObject creditsGameObject;
+    [SerializeField] private GameObject gameplayStateObject;
 
 
     //Awake is called before Start
@@ -54,6 +56,8 @@ public class GameManager : MonoBehaviour
         mainMenuStateObject.SetActive(false);
         optionsStateObject.SetActive(false);
         gameplayStateObject.SetActive(false);
+        controlsStateObject.SetActive(false);
+        creditsGameObject.SetActive(false);
     }
 
     public void ActivateTitleScreenState()
@@ -78,6 +82,18 @@ public class GameManager : MonoBehaviour
     {
         DeactivateAllStates();
         optionsStateObject.SetActive(true);
+    }
+
+    public void ActivateControlsState()
+    {
+        DeactivateAllStates();
+        controlsStateObject.SetActive(true);
+    }
+
+    public void ActivateCreditsState()
+    {
+        DeactivateAllStates();
+        creditsGameObject.SetActive(true);
     }
 
     public void ActivateGameplayState()
